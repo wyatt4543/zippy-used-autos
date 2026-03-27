@@ -19,7 +19,7 @@ if ($action == 'list_vehicles') {
     $types = get_types();
     $classes = get_classes();
     $vehicles = get_vehicles($make_id, $type_id, $class_id, $sort);
-    include('view/vehicle_list.php'); 
+    include('../view/vehicle_list.php'); 
 
 } elseif ($action == 'delete_vehicle') {
     $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', FILTER_VALIDATE_INT);
