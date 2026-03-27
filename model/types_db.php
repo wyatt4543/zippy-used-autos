@@ -1,7 +1,7 @@
 <?php
 function get_types() {
     global $db;
-    $query = 'SELECT * FROM types ORDER BY type_id';
+    $query = 'SELECT * FROM types ORDER BY type_name';
     $statement = $db->prepare($query);
     $statement->execute();
     $types = $statement->fetchAll();
@@ -26,3 +26,4 @@ function delete_type($type_id) {
     $statement->execute();
     $statement->closeCursor();
 }
+?>

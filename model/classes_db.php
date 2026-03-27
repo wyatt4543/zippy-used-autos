@@ -1,7 +1,7 @@
 <?php
 function get_classes() {
     global $db;
-    $query = 'SELECT * FROM classes ORDER BY class_id';
+    $query = 'SELECT * FROM classes ORDER BY class_name';
     $statement = $db->prepare($query);
     $statement->execute();
     $classes = $statement->fetchAll();
@@ -26,3 +26,4 @@ function delete_class($class_id) {
     $statement->execute();
     $statement->closeCursor();
 }
+?>
