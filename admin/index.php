@@ -3,18 +3,28 @@
 require_once('../model/database.php');
 require_once('../model/vehicles_db.php');
 require_once('../model/makes_db.php');
+require_once('../model/types_db.php');
+require_once('../model/classes_db.php');
+
+$make_id = filter_input(INPUT_GET, 'make_id', FILTER_VALIDATE_INT);
+$type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
+$class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
+$sort = filter_input(INPUT_GET, 'sort') ?: 'price';
 
 $action = filter_input(INPUT_POST, 'action') ?: filter_input(INPUT_GET, 'action') ?: 'list_vehicles';
 
 if ($action == 'list_vehicles') {
     // Same filtering/sorting logic as public but includes a delete button
+    $makes = get_makes();
+    $types = get_types();
+    $classes = get_classes();
     $vehicles = get_vehicles($make_id, $type_id, $class_id, $sort);
     include('view/vehicle_list.php'); 
 
 } elseif ($action == 'delete_vehicle') {
     $vehicle_id = filter_input(INPUT_POST, 'vehicle_id', FILTER_VALIDATE_INT);
     delete_vehicle($vehicle_id);
-    header("Location: .");
+    header("Location: .?action=list_vehicles");
 
 } elseif ($action == 'show_add_form') {
     $makes = get_makes();
