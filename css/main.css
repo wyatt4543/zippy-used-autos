@@ -97,3 +97,18 @@ button:hover {
         padding-left: 50%;
     }
 }
+
+.error-heading {
+    color: #dc3545; /* Red color for error headers */
+    border-bottom: 2px solid #dc3545;
+    padding-bottom: 5px;
+}
+
+.error-container {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin: 20px 0;
+}
