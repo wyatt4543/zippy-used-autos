@@ -1,4 +1,4 @@
-<?php include '../view/header.php'; ?>
+<?php include 'header.php'; ?>
 <main>
     <h2>Vehicle Type List</h2>
     <table>
@@ -26,4 +26,4 @@
     </form>
     <p><a href="index.php">Back to Admin</a></p>
 </main>
-<?php include '../view/footer.php'; ?>
+<?php include 'footer.php'; ?>

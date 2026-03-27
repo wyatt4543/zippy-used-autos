@@ -1,4 +1,4 @@
-<?php include '../view/header.php'; ?>
+<?php include 'header.php'; ?>
 <main>
     <form action="." method="get" id="make_selection">
         <select name="make_id">
@@ -36,4 +36,4 @@
         <?php endforeach; ?>
     </table>
 </main>
-<?php include '../view/footer.php'; ?>
+<?php include 'footer.php'; ?>
