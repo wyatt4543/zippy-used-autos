@@ -53,11 +53,13 @@ if ($action == 'list_vehicles') {
 }
 
 // select all of the different controllers
-if ($action == 'list_makes') {
+if ($action == 'list_makes' || $action == 'add_make' || $action == 'delete_make') {
     include('controllers/makes.php');
-} elseif ($action == 'list_types') {
+
+} elseif ($action == 'list_types' || $action == 'add_type' || $action == 'delete_type') {
     include('controllers/types.php');
-} elseif ($action == 'list_classes') {
+
+} elseif ($action == 'list_classes' || $action == 'add_class' || $action == 'delete_class') {
     include('controllers/classes.php');
 }
 ?>
