@@ -50,14 +50,14 @@ if ($action == 'list_vehicles') {
         $error = "Invalid vehicle data. Check all fields and try again.";
         include('../view/error.php');
     }
+}
 
-    // select all of the different controllers
-    if ($action == 'list_makes') {
-        include('controllers/makes.php');
-    } elseif ($action == 'list_types') {
-        include('controllers/types.php');
-    } elseif ($action == 'list_classes') {
-        include('controllers/classes.php');
-    }
+// select all of the different controllers
+if ($action == 'list_makes') {
+    include('controllers/makes.php');
+} elseif ($action == 'list_types') {
+    include('controllers/types.php');
+} elseif ($action == 'list_classes') {
+    include('controllers/classes.php');
 }
 ?>
